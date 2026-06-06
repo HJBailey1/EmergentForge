@@ -1,5 +1,10 @@
 name: Deploy Emergent Choirforge
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 on:
   push:
     branches:
@@ -10,9 +15,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
+          fetch-depth: 0
       - name: Prepare deployment directory
         run: |
           rm -rf deploy

@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Emergent Choirforge — demo
+﻿# Emergent Choirforge — demo
 
 This is a small playable demo prototype for the Emergent Choirforge concept.
 
@@ -40,14 +39,14 @@ Preset sharing (implemented)
 
 - Prototype: Emergent Choirforge playable web demo using Tone.js + Three.js.
 - Features implemented:
-	- Formant-style choir voices (soprano/alto/tenor/bass) with humanize/blend.
-	- Reese and metal engines, reverb, and drive chains.
-	- Four macro controls: Sanctify/Corrupt, Gravity, Pulse, Swarm.
-	- 16-step sequencer with per-step pitch and velocity, tempo-synced LFO (musical subdivisions).
-	- Preset system: built-in presets, copy preset link, export/import JSON, URL-encoded presets.
-	- Visuals: WebGL Three.js pulsing sphere reacting to audio (biotech starting point).
-	- Recording: simple Record → Download (webm) via MediaStreamDestination.
-	- Embeddable `widget.html` for iframe demos.
+  - Formant-style choir voices (soprano/alto/tenor/bass) with humanize/blend.
+  - Reese and metal engines, reverb, and drive chains.
+  - Four macro controls: Sanctify/Corrupt, Gravity, Pulse, Swarm.
+  - 16-step sequencer with per-step pitch and velocity, tempo-synced LFO (musical subdivisions).
+  - Preset system: built-in presets, copy preset link, export/import JSON, URL-encoded presets.
+  - Visuals: WebGL Three.js pulsing sphere reacting to audio (biotech starting point).
+  - Recording: simple Record → Download (webm) via MediaStreamDestination.
+  - Embeddable `widget.html` for iframe demos.
 
 ## Packaging & Local Serve
 
@@ -115,7 +114,3 @@ Host the folder and embed `widget.html` inside an iframe. You can include a `pre
 - Improve choir realism with wavetable or sample-based formants.
 - Enhance visuals (veins, tentacles, animated macro tendrils) with Three.js shaders.
 - Add pattern chaining, per-step pitch lanes, and preset-pattern sharing links.
-=======
-# EmergentForge
-EmergentForge is a web-based audio-visual synth demo combining Tone.js and Three.js into a playable choir sequencer with realtime macros, sampled/wavetable voices, and embed/Pages deployment support.
->>>>>>> origin/main
