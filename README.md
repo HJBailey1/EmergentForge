@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Emergent Choirforge — demo
 
 This is a small playable demo prototype for the Emergent Choirforge concept.
@@ -114,3 +115,7 @@ Host the folder and embed `widget.html` inside an iframe. You can include a `pre
 - Improve choir realism with wavetable or sample-based formants.
 - Enhance visuals (veins, tentacles, animated macro tendrils) with Three.js shaders.
 - Add pattern chaining, per-step pitch lanes, and preset-pattern sharing links.
+=======
+# EmergentForge
+EmergentForge is a web-based audio-visual synth demo combining Tone.js and Three.js into a playable choir sequencer with realtime macros, sampled/wavetable voices, and embed/Pages deployment support.
+>>>>>>> origin/main
