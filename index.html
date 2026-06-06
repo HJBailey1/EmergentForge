@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Emergent Choirforge — Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/tone/build/Tone.min.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Emergent Choirforge (demo)</h1>
+    <p>Bio‑tech alien synth for choirs, clubs, and chaos.</p>
+  </header>
+
+  <main>
+    <canvas id="vis" width="900" height="240"></canvas>
+
+    <section class="controls">
+      <div class="row">
+        <label>Preset</label>
+        <select id="presetSelect"></select>
+        <button id="playBtn">Play</button>
+        <button id="stopBtn">Stop</button>
+        <button id="recordBtn">Record</button>
+        <button id="copyLinkBtn">Copy Preset Link</button>
+        <button id="exportPresetBtn">Export Preset</button>
+        <input id="importPresetInput" type="file" accept="application/json" style="display:none">
+        <button id="importPresetBtn">Import Preset</button>
+      </div>
+
+      <div class="row sliders">
+        <div class="ctrl"><label>Sanctify / Corrupt</label><input id="macroSanctify" type="range" min="0" max="1" step="0.01" value="0.1"></div>
+        <div class="ctrl"><label>Gravity</label><input id="macroGravity" type="range" min="0" max="1" step="0.01" value="0.3"></div>
+        <div class="ctrl"><label>Pulse</label><input id="macroPulse" type="range" min="0" max="1" step="0.01" value="0.2"></div>
+        <div class="ctrl"><label>Swarm</label><input id="macroSwarm" type="range" min="0" max="1" step="0.01" value="0.2"></div>
+      </div>
+    </section>
+
+    <section class="sequencer" style="margin-top:12px; padding:12px; background:rgba(255,255,255,0.01); border-radius:8px">
+      <div class="row">
+        <label>Tempo (BPM)</label>
+        <input id="bpmInput" type="number" min="40" max="240" value="120" style="width:80px">
+        <label style="margin-left:12px">Sequence</label>
+        <div id="sequencer" style="display:flex;gap:6px;margin-left:8px"></div>
+      </div>
+      <div class="row" style="margin-top:10px;gap:12px;align-items:center">
+        <label>LFO A Target</label>
+        <select id="lfoATarget"><option value="choir">Choir Filter</option><option value="reese">Reese Filter</option><option value="reverb">Reverb Wet</option></select>
+        <label>LFO A Rate</label>
+        <select id="lfoARate"><option value="1n">1n</option><option value="2n">2n</option><option value="4n" selected>4n</option><option value="8n">8n</option><option value="16n">16n</option></select>
+        <label>LFO A Depth</label>
+        <input id="lfoADepth" type="range" min="0" max="1" step="0.01" value="0.3">
+      </div>
+    </section>
+
+    <section class="sequencer" style="margin-top:12px; padding:12px; background:rgba(255,255,255,0.01); border-radius:8px">
+      <div class="row">
+        <label>Choir Voice</label>
+        <select id="choirVoiceType"><option value="soprano">Soprano</option><option value="alto">Alto</option><option value="tenor">Tenor</option><option value="bass">Bass</option></select>
+        <label style="margin-left:8px">Choir Blend</label>
+        <input id="choirBlend" type="range" min="0" max="1" step="0.01" value="0.7">
+        <label style="margin-left:8px">Choir Mode</label>
+        <select id="choirMode"><option value="formant">Formant</option><option value="wavetable">Wavetable</option><option value="sample">Sample</option></select>
+        <label style="margin-left:8px">Wavetable</label>
+        <select id="wavetableType"><option value="saw">Saw</option><option value="square">Square</option><option value="triangle">Triangle</option></select>
+        <label style="margin-left:8px">Sample URL</label>
+        <input id="sampleUrl" type="text" placeholder="https://.../sample.wav" style="width:220px">
+        <button id="loadSampleBtn">Load Sample</button>
+      </div>
+      <div class="row" style="margin-top:8px;align-items:center">
+        <label>Patterns</label>
+        <button id="savePatternBtn">Save Pattern</button>
+        <button id="loadPatternBtn">Load Pattern</button>
+        <button id="exportPatternBtn">Export Pattern</button>
+        <input id="importPatternInput" type="file" accept="application/json" style="display:none">
+        <button id="importPatternBtn">Import Pattern</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

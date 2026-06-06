@@ -1,0 +1,30 @@
+name: Deploy Emergent Choirforge
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Prepare deployment directory
+        run: |
+          rm -rf deploy
+          mkdir -p deploy/css deploy/js
+          cp index.html widget.html deploy/
+          cp -r css/* deploy/css/
+          cp -r js/* deploy/js/
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy
+          publish_branch: gh-pages
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com

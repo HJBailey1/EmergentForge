@@ -1,0 +1,10 @@
+# Ignore packaged release archives
+emergent-choirforge.zip
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore editor files
+*.swp
+*~
